@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formwise Privacy Policy</title>
+  <link rel="icon" href="favicon.png">
+  <style>
+    :root { --bg: #f1f3f6; --surface: #fff; --text: #14171c; --muted: #545c69; --border: #dfe3e9; --accent: #0e8f6e; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { --bg: #14171c; --surface: #1c2027; --text: #eef0f4; --muted: #a2a9b6; --border: #2b303a; --accent: #19b88c; }
+    }
+    :root[data-theme="dark"] { --bg: #14171c; --surface: #1c2027; --text: #eef0f4; --muted: #a2a9b6; --border: #2b303a; --accent: #19b88c; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16.5px/1.65 -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+    a { color: var(--accent); }
+    .top { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; font-weight: 700; }
+    .top img { width: 28px; height: 28px; }
+    h1 { font-size: 34px; letter-spacing: -0.02em; margin: 36px 0 4px; }
+    .updated { color: var(--muted); margin: 0 0 28px; }
+    h2 { font-size: 21px; margin: 32px 0 8px; }
+    .summary { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; }
+    .summary p { margin: 0; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="top" href="index.html"><img src="images/icon.png" alt="">Formwise</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 3, 2026</p>
+
+    <div class="summary">
+      <p><strong>In short:</strong> Formwise stores your saved forms only in your browser. They are never uploaded, and we never see them. We don't use analytics or ads, and we don't sell data. The only outside service involved is our payment provider, and only for Pro.</p>
+    </div>
+
+    <h2>Your saved forms</h2>
+    <p>When you save a form, Formwise reads the fields you filled in on that page and stores their labels and values in Chrome's local extension storage on your own device. When you fill a form, that data is read from your device and put into the page you are on. It is never sent to us or to anyone else. Uninstalling Formwise removes it.</p>
+
+    <h2>Fields Formwise never saves</h2>
+    <p>Password fields and credit card fields (such as card numbers, CVV and fields marked as card details) are skipped, so they are never saved or filled.</p>
+
+    <h2>Which pages Formwise can see</h2>
+    <p>Formwise only reads or fills the page you are on, and only when you click its icon or press its keyboard shortcut. If you turn on the Pro feature "fill automatically when the page opens" for a saved form, Chrome asks you to allow Formwise on that one site, and Formwise then fills matching pages on that site as they open. Formwise does not read pages in the background, record your browsing history or look at sites you have not allowed.</p>
+
+    <h2>Other data stored on your device</h2>
+    <ul>
+      <li><strong>Settings:</strong> your preferences, such as light or dark mode, and a counter used by the Pro "counter" value.</li>
+      <li><strong>Pro status:</strong> whether you've unlocked Pro is cached locally so Pro features keep working offline.</li>
+    </ul>
+
+    <h2>Backups and imports</h2>
+    <p>If you use Export, your forms are saved to a file that you choose where to keep. If you use Import, the file you pick is read in your browser. Neither action sends anything over the internet.</p>
+
+    <h2>Payments (Formwise Pro)</h2>
+    <p>Pro purchases are handled by <a href="https://extensionpay.com" rel="noopener">ExtensionPay</a>, with card payments processed by <a href="https://stripe.com/privacy" rel="noopener">Stripe</a>. When you upgrade, you enter your email address and payment details on their pages, not in Formwise. We never see your card details.</p>
+    <p>To know whether Pro is unlocked, Formwise contacts ExtensionPay using a random identifier issued for your installation (Chrome may sync it to your other signed-in browsers so Pro carries over). This request contains no information about your forms or the sites you visit. ExtensionPay may store your email, purchase history and that identifier to manage your purchase and let you restore Pro on another browser. See ExtensionPay's and Stripe's privacy policies for details.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't collect analytics, usage tracking or browsing history.</li>
+      <li>We don't show ads.</li>
+      <li>We don't sell, rent or share your data.</li>
+      <li>We don't use data for anything other than making Formwise work.</li>
+    </ul>
+
+    <h2>Permissions Formwise uses</h2>
+    <ul>
+      <li><strong>Active tab and scripting:</strong> let Formwise read and fill the form on the page you are viewing, when you ask.</li>
+      <li><strong>Storage:</strong> keeps saved forms, settings and Pro status on your device.</li>
+      <li><strong>Website access (optional, per site):</strong> only requested when you turn on automatic filling for a site.</li>
+      <li><strong>extensionpay.com:</strong> lets Formwise know when a purchase completes.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>Formwise is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we'll update this page and the date above.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Please <a href="https://github.com/ishaanzee/formwise-site/issues/new" rel="noopener">open an issue</a>.</p>
+  </main>
+</body>
+</html>

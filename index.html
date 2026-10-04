@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formwise – Autofill forms, no subscription</title>
+  <meta name="description" content="Save any web form once and refill it in one click. Free and unlimited, stored on your computer, with no account.">
+  <link rel="icon" href="favicon.png">
+  <meta property="og:title" content="Formwise – Autofill forms, no subscription">
+  <meta property="og:description" content="Save any form once, refill it in one click. Unlimited fills, stored on your computer.">
+  <meta property="og:image" content="images/icon.png">
+  <style>
+    :root {
+      --bg: #f1f3f6; --surface: #fff; --text: #14171c; --muted: #545c69; --border: #dfe3e9;
+      --accent: #0e8f6e; --accent-dark: #0b7a5e; --soft: #e2f5ef; --gold: #f5b400;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { --bg: #14171c; --surface: #1c2027; --text: #eef0f4; --muted: #a2a9b6; --border: #2b303a; --accent: #19b88c; --accent-dark: #3acfa3; --soft: #173a31; }
+    }
+    :root[data-theme="dark"] { --bg: #14171c; --surface: #1c2027; --text: #eef0f4; --muted: #a2a9b6; --border: #2b303a; --accent: #19b88c; --accent-dark: #3acfa3; --soft: #173a31; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 -apple-system, "Segoe UI", Roboto, sans-serif; }
+    a { color: var(--accent); }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    header.nav { display: flex; align-items: center; gap: 10px; padding: 18px 0; }
+    header.nav img { width: 32px; height: 32px; }
+    header.nav b { font-size: 19px; }
+    header.nav nav { margin-left: auto; display: flex; gap: 22px; font-size: 15px; }
+    header.nav nav a { color: var(--muted); text-decoration: none; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 10px; font-weight: 650;
+           text-decoration: none; background: var(--accent); color: #fff; }
+    :root[data-theme="dark"] .btn { color: #04231a; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn { color: #04231a; } }
+    .btn.soon { background: var(--soft); color: var(--accent); cursor: default; }
+    .hero { text-align: center; padding: 64px 0 24px; }
+    .hero h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 18px; }
+    .hero p { font-size: 20px; color: var(--muted); max-width: 640px; margin: 0 auto 28px; }
+    .hero small { display: block; margin-top: 12px; color: var(--muted); font-size: 14px; }
+    section { padding: 56px 0; }
+    h2 { font-size: clamp(28px, 4vw, 36px); letter-spacing: -0.02em; text-align: center; margin: 0 0 32px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+    .steps { counter-reset: s; display: grid; gap: 14px; max-width: 640px; margin: 0 auto; padding: 0; list-style: none; }
+    .steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px 16px 62px; position: relative; }
+    .steps li::before { content: counter(s); position: absolute; left: 18px; top: 14px; width: 30px; height: 30px; border-radius: 50%;
+                        background: var(--soft); color: var(--accent); font-weight: 750; display: grid; place-items: center; }
+    .pro-tag { display: inline-block; background: var(--gold); color: #3a2a00; font-size: 12px; font-weight: 800; padding: 1px 7px; border-radius: 5px; vertical-align: middle; margin-left: 6px; }
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 780px; margin: 0 auto; }
+    .plan { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .plan.pro { border: 2px solid var(--accent); }
+    .plan h3 { margin: 0; font-size: 20px; }
+    .price { font-size: 40px; font-weight: 750; margin: 8px 0 4px; letter-spacing: -0.02em; }
+    .price span { font-size: 16px; font-weight: 500; color: var(--muted); }
+    .plan ul { padding-left: 0; list-style: none; margin: 18px 0 0; display: grid; gap: 8px; }
+    .plan li::before { content: "✓  "; color: var(--accent); font-weight: 700; }
+    details { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+    summary { font-weight: 650; cursor: pointer; }
+    details p { color: var(--muted); margin: 10px 0 0; }
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 14px; display: flex; gap: 18px; flex-wrap: wrap; }
+    @media (max-width: 760px) { header.nav nav { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <img src="images/icon.png" alt=""><b>Formwise</b>
+      <nav><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#help">Help</a><a href="privacy.html">Privacy</a></nav>
+    </header>
+
+    <div class="hero">
+      <h1>Fill any form<br>in one click</h1>
+      <p>Save a filled-in form once, then refill it whenever you need it. Free and unlimited, with no account and no subscription.</p>
+      <a class="btn soon" id="storeLink">Coming soon to the Chrome Web Store</a>
+      <small>No sign-up · No daily limit · Stays on your computer</small>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Why people switch to Formwise</h2>
+      <div class="grid">
+        <div class="card"><h3>Free means free</h3><p>Unlimited fills and unlimited saved forms. No daily cap and no countdown timer.</p></div>
+        <div class="card"><h3>Private by design</h3><p>Your saved forms live in your browser and are never uploaded. No account, no tracking.</p></div>
+        <div class="card"><h3>Works on modern sites</h3><p>Handles React and other framework-built forms, dropdowns, checkboxes, radio buttons and forms inside iframes.</p></div>
+        <div class="card"><h3>Bring your forms along</h3><p>Import a Lightning Autofill export, or back up and move your own forms with export and import.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>Open a page with a form and fill it in the way you like.</li>
+        <li>Click the Formwise icon, then <b>Save this form</b>.</li>
+        <li>Next time, click the icon (or press <b>Alt+Shift+F</b>) and the page fills itself in.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Simple pricing</h2>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">$0 <span>forever</span></div>
+          <ul><li>Unlimited fills</li><li>Unlimited saved forms</li><li>Edit, export and import forms</li><li>Lightning Autofill import</li><li>Keyboard shortcut</li></ul>
+        </div>
+        <div class="plan pro">
+          <h3>Pro</h3>
+          <div class="price">$9.99 <span>one-time</span></div>
+          <ul><li>Everything in Free</li><li>Fill automatically when a page opens <span class="pro-tag">PRO</span></li><li>Dynamic values: random names, emails, dates, counters</li><li>Press Submit for you after filling</li><li>No subscription. Pay once, keep it.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="help">
+    <div class="wrap" style="max-width: 760px">
+      <h2>Questions</h2>
+      <details><summary>Is my form data uploaded anywhere?</summary><p>No. Saved forms are kept in your browser's local extension storage and never leave your computer. The only outside service involved is our payment provider (ExtensionPay), which is contacted to check whether Pro is unlocked. Your forms are never part of that.</p></details>
+      <details><summary>Does it save passwords or card numbers?</summary><p>No. Password fields and credit card fields are skipped on purpose, so they are never saved or filled.</p></details>
+      <details><summary>Why doesn't Formwise ask for access to every website?</summary><p>Filling from the toolbar icon or the shortcut only touches the page you are on, at the moment you ask. Only if you turn on "fill automatically when the page opens" (Pro) does Chrome ask you to allow that one site.</p></details>
+      <details><summary>I'm coming from Lightning Autofill. Can I keep my forms?</summary><p>Yes. Export your data from Lightning Autofill as a .csv file, then use <b>Import</b> on Formwise's saved-forms page.</p></details>
+      <details><summary>I paid for Pro on another computer. How do I unlock it here?</summary><p>Open Formwise's saved-forms page, click <b>Already paid?</b> and enter the email you paid with.</p></details>
+      <details><summary>Something isn't working</summary><p>Please <a href="https://github.com/ishaanzee/formwise-site/issues/new" rel="noopener">open an issue</a> with the site you were on and what you expected. We read everything.</p></details>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>© 2026 Formwise</span>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="https://github.com/ishaanzee/formwise-site/issues" rel="noopener">Support</a>
+    </footer>
+  </div>
+</body>
+</html>
